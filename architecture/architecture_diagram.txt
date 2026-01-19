@@ -1,0 +1,39 @@
+┌────────────────────┐
+│   Fuentes de Datos │
+│────────────────────│
+│ - API de Ventas    │
+│ - BD Inventario   │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│      Ingesta       │
+│────────────────────│
+│ - Extracción batch │
+│ - Validaciones     │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│   Procesamiento    │
+│────────────────────│
+│ - Limpieza datos   │
+│ - Transformación  │
+│ - Métricas clave  │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│  Almacenamiento    │
+│────────────────────│
+│ - PostgreSQL       │
+│ - Datos limpios    │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│     Consumo        │
+│────────────────────│
+│ - Dashboard        │
+│ - Reportes diarios │
+└────────────────────┘

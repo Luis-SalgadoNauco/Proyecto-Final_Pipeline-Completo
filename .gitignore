@@ -1,0 +1,46 @@
+# ======================
+# Python
+# ======================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+.venv/
+env/
+ENV/
+
+# ======================
+# Jupyter
+# ======================
+.ipynb_checkpoints/
+
+# ======================
+# Airflow
+# ======================
+airflow.cfg
+airflow.db
+logs/
+plugins/__pycache__/
+
+# ======================
+# OS / Editor
+# ======================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ======================
+# Logs & temp files
+# ======================
+*.log
+*.tmp
+*.bak
+
+# ======================
+# Data (si luego agregas datasets)
+# ======================
+data/
+raw_data/
+processed_data/
