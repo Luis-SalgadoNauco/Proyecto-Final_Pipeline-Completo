@@ -130,12 +130,53 @@ Un pipeline que falla silenciosamente:
 - Abortar ante errores de validación o lógica de negocio
 
 ---
+ 
+# Día 3 – Validación y Pruebas
 
-### Día 3 – Validación y Pruebas
-*(Pendiente)*
+## Objetivo del Día
+Implementar pruebas básicas para validar la lógica del pipeline de datos, asegurando que los cálculos críticos funcionen correctamente antes de avanzar hacia etapas de optimización o despliegue.
 
-#### Verificación – Día 3
-*(Pendiente)*
+---
+
+## Actividades Realizadas
+
+### Introducción al Testing en Pipelines de Datos
+Se revisó la importancia del testing en pipelines de datos, considerando que estos procesan información crítica para el negocio. Las pruebas permiten detectar errores tempranamente y evitar regresiones cuando el código evoluciona.
+
+Se identificaron los principales tipos de pruebas aplicables a pipelines:
+- **Pruebas unitarias**
+- **Pruebas de integración**
+- **Validación de calidad de datos**
+
+---
+
+### Implementación de Función a Testear
+Se utilizó una función de negocio encargada de calcular el total de ventas por producto, considerando cantidad y precio. Esta función forma parte del módulo `utils` del proyecto y representa una lógica crítica del pipeline.
+
+---
+
+### Creación de Prueba Unitaria Básica
+Se creó una prueba unitaria en la carpeta `tests/`, validando:
+- La correcta acumulación de ventas por producto
+- El manejo de múltiples registros para un mismo producto
+
+La prueba fue implementada sin frameworks externos, utilizando `assert`, alineado al enfoque del curso y permitiendo una validación clara y directa de la lógica.
+
+La ejecución de la prueba fue **exitosa**, confirmando el correcto funcionamiento de la función evaluada.
+
+---
+
+## Verificación – Respuestas
+
+### ¿Por qué es importante testear pipelines de datos?
+Porque los pipelines procesan datos críticos para el negocio. Un error no detectado puede propagarse hasta reportes o dashboards, generando decisiones incorrectas. El testing asegura confiabilidad y calidad en el procesamiento.
+
+---
+
+### ¿Qué tipos de errores son más comunes y cómo detectarlos?
+- **Errores de lógica**: detectados mediante pruebas unitarias
+- **Errores de integración**: detectados al probar componentes en conjunto
+- **Errores de calidad de datos**: detectados mediante validaciones de completitud, exactitud y consistencia
 
 ---
 
@@ -159,15 +200,19 @@ Un pipeline que falla silenciosamente:
 
 ```text
 week_3_final_project/
-├── architecture
+├── architecture/
 │   └── architecture_diagram.txt
-├── docs
+├── docs/
 │   └── architecture_retail.md
-├── notes
-├── src
-│   ├── pipeline.py
-│   ├── utils.py
-│   └── __init__.py
-├── logs
+├── logs/
 │   └── pipeline.log
+├── notes/
+├── src/
+│   ├── __init__.py
+│   ├── pipeline.py
+│   └── utils.py
+├── tests/
+│   └── test_utils.py
+├── requirements.txt
+├── .gitignore
 └── README.md
