@@ -1,0 +1,4 @@
+=== Evaluación de Performance Día 4 ===
+Lento  : 0.002476 segundos
+Rápido : 0.003215 segundos
+Ratio  : 0.77x

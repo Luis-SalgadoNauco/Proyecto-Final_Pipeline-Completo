@@ -181,10 +181,58 @@ Porque los pipelines procesan datos críticos para el negocio. Un error no detec
 ---
 
 ### Día 4 – Optimización y Rendimiento
-*(Pendiente)*
 
-#### Verificación – Día 4
-*(Pendiente)*
+#### Objetivo del día
+Identificar posibles cuellos de botella en un pipeline de datos y aplicar técnicas básicas de optimización, evaluando el impacto real mediante mediciones de rendimiento.
+
+---
+
+#### Actividades realizadas
+- Análisis conceptual de cuellos de botella en pipelines de datos (ingesta, procesamiento, almacenamiento e I/O).
+- Implementación de medición de tiempo de ejecución para funciones de procesamiento.
+- Comparación entre una versión secuencial y una versión alternativa de procesamiento de datos.
+- Ejecución de pruebas con diferentes volúmenes de datos para evaluar impacto de la optimización.
+- Generación de evidencia persistente de los resultados obtenidos.
+
+---
+
+#### Evaluación de rendimiento
+Se evaluaron dos versiones de una función de procesamiento de datos:
+- Versión secuencial (baseline).
+- Versión alternativa con enfoque “optimizado”.
+
+Las pruebas se realizaron con:
+- Volumen moderado de datos.
+- Volumen grande (1.000.000 de registros).
+
+Los resultados demostraron que:
+- Para ciertos escenarios, la versión alternativa no presenta mejoras significativas.
+- El uso de estructuras y operaciones internas de Python puede introducir overhead adicional.
+- La optimización debe basarse en métricas reales y no en supuestos teóricos.
+
+---
+
+#### Evidencia generada
+Los resultados de las pruebas de rendimiento fueron almacenados como evidencia técnica en archivos de texto:
+
+- `docs/performance_day4.txt`
+- `docs/performance_day4_large.txt`
+
+Estos archivos contienen:
+- Cantidad de registros procesados.
+- Tiempo de ejecución de cada versión.
+- Comparación directa de rendimiento.
+- Conclusión de la prueba.
+
+---
+
+#### Verificación – Respuestas
+
+**¿Cuándo deberías optimizar el rendimiento?**  
+Cuando existen cuellos de botella identificados mediante métricas reales y el impacto justifica el aumento de complejidad.
+
+**¿Qué compensaciones considerar entre velocidad y complejidad?**  
+Una optimización puede mejorar tiempos de ejecución, pero también aumentar la complejidad del código, dificultar el mantenimiento y reducir la legibilidad. Siempre se debe evaluar el balance entre rendimiento, claridad y costo operativo.
 
 ---
 
@@ -203,7 +251,9 @@ week_3_final_project/
 ├── architecture/
 │   └── architecture_diagram.txt
 ├── docs/
-│   └── architecture_retail.md
+│   ├── architecture_retail.md
+│   ├── performance_day4.txt
+│   └── performance_day4_large.txt
 ├── logs/
 │   └── pipeline.log
 ├── notes/

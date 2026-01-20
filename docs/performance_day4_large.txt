@@ -1,0 +1,12 @@
+=== Evaluación de Performance – Día 4 ===
+Registros procesados: 1,000,000
+
+
+--- Resultados ---
+Versión lenta   : 0.2630 segundos
+Versión rápida  : 0.3091 segundos
+Relación (x)    : 0.85x
+
+Conclusión:
+La versión optimizada no mejora el rendimiento en este escenario.
+Esto evidencia que la optimización debe basarse en mediciones reales.
