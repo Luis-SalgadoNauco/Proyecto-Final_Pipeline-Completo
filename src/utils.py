@@ -95,3 +95,41 @@ def procesar_datos_rapido(datos):
         {**fila, "total": fila["precio"] * fila["cantidad"]}
         for fila in datos
     ]
+
+# ======================================================
+# Docstring profesioal
+# ======================================================
+
+def validar_datos_ventas(datos):
+    """
+    Valida la calidad de los datos de ventas antes del procesamiento.
+
+    Reglas de validación:
+    - El precio debe ser mayor a 0
+    - La fecha no puede estar vacía
+    - Cada fila debe contener los campos requeridos
+
+    Args:
+        datos (list): Lista de diccionarios con datos de ventas.
+                      Ejemplo:
+                      {'precio': 100, 'fecha': '2024-01-01'}
+
+    Returns:
+        dict: Resultado de la validación con las claves:
+            - valido (bool): True si no hay errores
+            - errores (list): Lista de errores encontrados
+            - total_filas (int): Número total de filas evaluadas
+    """
+    errores = []
+
+    for i, fila in enumerate(datos):
+        if fila.get('precio', 0) <= 0:
+            errores.append(f"Fila {i}: precio inválido")
+        if not fila.get('fecha'):
+            errores.append(f"Fila {i}: fecha faltante")
+
+    return {
+        'valido': len(errores) == 0,
+        'errores': errores,
+        'total_filas': len(datos)
+    }

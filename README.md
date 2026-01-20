@@ -131,16 +131,16 @@ Un pipeline que falla silenciosamente:
 
 ---
  
-# Día 3 – Validación y Pruebas
+### Día 3 – Validación y Pruebas
 
-## Objetivo del Día
+#### Objetivo del Día
 Implementar pruebas básicas para validar la lógica del pipeline de datos, asegurando que los cálculos críticos funcionen correctamente antes de avanzar hacia etapas de optimización o despliegue.
 
 ---
 
-## Actividades Realizadas
+#### Actividades Realizadas
 
-### Introducción al Testing en Pipelines de Datos
+#### Introducción al Testing en Pipelines de Datos
 Se revisó la importancia del testing en pipelines de datos, considerando que estos procesan información crítica para el negocio. Las pruebas permiten detectar errores tempranamente y evitar regresiones cuando el código evoluciona.
 
 Se identificaron los principales tipos de pruebas aplicables a pipelines:
@@ -150,12 +150,12 @@ Se identificaron los principales tipos de pruebas aplicables a pipelines:
 
 ---
 
-### Implementación de Función a Testear
+#### Implementación de Función a Testear
 Se utilizó una función de negocio encargada de calcular el total de ventas por producto, considerando cantidad y precio. Esta función forma parte del módulo `utils` del proyecto y representa una lógica crítica del pipeline.
 
 ---
 
-### Creación de Prueba Unitaria Básica
+#### Creación de Prueba Unitaria Básica
 Se creó una prueba unitaria en la carpeta `tests/`, validando:
 - La correcta acumulación de ventas por producto
 - El manejo de múltiples registros para un mismo producto
@@ -166,14 +166,15 @@ La ejecución de la prueba fue **exitosa**, confirmando el correcto funcionamien
 
 ---
 
-## Verificación – Respuestas
+#### Verificación – Respuestas
 
-### ¿Por qué es importante testear pipelines de datos?
+**¿Por qué es importante testear pipelines de datos?**
+
 Porque los pipelines procesan datos críticos para el negocio. Un error no detectado puede propagarse hasta reportes o dashboards, generando decisiones incorrectas. El testing asegura confiabilidad y calidad en el procesamiento.
 
----
 
-### ¿Qué tipos de errores son más comunes y cómo detectarlos?
+**¿Qué tipos de errores son más comunes y cómo detectarlos?**
+
 - **Errores de lógica**: detectados mediante pruebas unitarias
 - **Errores de integración**: detectados al probar componentes en conjunto
 - **Errores de calidad de datos**: detectados mediante validaciones de completitud, exactitud y consistencia
@@ -237,10 +238,68 @@ Una optimización puede mejorar tiempos de ejecución, pero también aumentar la
 ---
 
 ### Día 5 – Documentación y Presentación
-*(Pendiente)*
 
-#### Verificación – Día 5
-*(Pendiente)*
+#### Objetivo del día
+Documentar técnicamente el pipeline desarrollado durante la semana y preparar una comunicación clara de resultados, considerando distintas audiencias (técnica y de negocio).
+
+---
+
+#### Documentación técnica
+
+Se reforzó la importancia de documentar correctamente los componentes del pipeline para facilitar el mantenimiento, reducir errores y acelerar el onboarding de nuevos integrantes del equipo.
+
+Se documentó el componente de validación de datos de ventas, incorporando:
+- Propósito claro del componente
+- Reglas de validación
+- Estructura de salida
+- Ejemplo de uso probado en entorno local
+
+El componente `validar_datos_ventas` valida criterios básicos de calidad antes del procesamiento:
+- El precio debe ser mayor a 0
+- La fecha no puede estar vacía
+- Se reportan errores detallados por fila
+
+La función fue integrada y ejecutada exitosamente desde `src/utils.py`, validando su correcto funcionamiento.
+
+---
+
+#### Comunicación de resultados
+
+Se trabajó en la estructuración de un **resumen ejecutivo**, orientado a audiencias no técnicas, destacando impacto, beneficios y métricas clave del proyecto.
+
+Resumen ejecutivo del proyecto:
+
+- **Proyecto:** Pipeline de Analytics de Ventas
+- **Objetivo:** Automatizar reportes de ventas semanales
+- **Solución implementada:** Pipeline ETL con validaciones de calidad de datos
+- **Beneficios principales:**
+  - Reducción del tiempo de reporte: 3 días → 2 horas
+  - Mejora en la calidad de datos: 95% de precisión
+  - Ahorro anual estimado: €50,000
+- **Métricas clave:**
+  - Tiempo de procesamiento: 2 horas
+  - Precisión de datos: 95%
+  - Disponibilidad del sistema: 99.5%
+
+Este enfoque permite comunicar el valor del pipeline tanto a equipos técnicos como a stakeholders de negocio.
+
+---
+
+#### Verificación
+
+**¿Cómo adaptar una presentación técnica para diferentes audiencias?**
+
+- Audiencia técnica: detalles de implementación, validaciones, métricas técnicas y decisiones de diseño.
+- Audiencia de negocio: impacto, beneficios, ahorro de tiempo y mejora en la toma de decisiones.
+- Audiencia ejecutiva: resumen ejecutivo, resultados clave y retorno de inversión.
+
+**¿Qué elementos son más importantes en la documentación?**
+
+- README: visión general y guía principal del proyecto.
+- Código comentado y docstrings: comprensión técnica detallada.
+- Diagramas: entendimiento rápido de la arquitectura.
+
+La combinación de estos elementos asegura una documentación clara, mantenible y profesional.
 
 ---
 
@@ -266,3 +325,4 @@ week_3_final_project/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+
